@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mbarwick83\\Instagram\\": "packages/mbarwick83/instagram/src"
+            "Mbarwick83\\Instagram\\": "src/"
         }
     },
     "autoload-dev": {
