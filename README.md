@@ -96,11 +96,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/mbarwick83/previewr.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/mbarwick83/instagram.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/mbarwick83/previewr.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/mbarwick83/instagram.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/mbarwick83/previewr
-[link-downloads]: https://packagist.org/packages/mbarwick83/previewr
+[link-packagist]: https://packagist.org/packages/mbarwick83/instagram
+[link-downloads]: https://packagist.org/packages/mbarwick83/instagram
 [link-author]: https://github.com/mbarwick83
 [link-contributors]: ../../contributors
