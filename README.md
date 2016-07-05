@@ -72,7 +72,7 @@ Those are the only two custom classes for the API package. The rest of the API w
 All you need to do is specify if the request is a `POST` or `GET` request, specify **just the end point** and any URL queries that are required (in an array).
 For example:
 
-```
+```php
 public function index(Instagram $instagram)
 {
     $data = $instagram->get('v1/users/self', ['access_token' => $access_token]);
