@@ -91,7 +91,7 @@ class Instagram
 	    	'client_secret' => $this->client_secret,
 	    	'redirect_uri' => $this->redirect_uri,			 
 	    	'grant_type' => 'authorization_code',
-	];
+	    ];
 
     	if ($parameters)
 	    $query = array_merge($query, $parameters);
