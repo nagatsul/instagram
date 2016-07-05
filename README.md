@@ -11,7 +11,7 @@ Simple Instagram API package for Laravel 5.*. Package is in development, but wor
 To install, run the following command in your project directory
 
 ``` bash
-$ composer require mbarwick83/instagram
+$ composer require mbarwick83/instagram dev-master
 ```
 
 Then in `config/app.php` add the following to the `providers` array:
