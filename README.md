@@ -37,7 +37,7 @@ use Mbarwick83\Instagram\Instagram;
 To publish the packages configuration file, run the following `vendor:publish` command:
 
 ```
-php artisan vendor:publish"
+php artisan vendor:publish
 ```
 
 This will create a instagram.php in your config directory. Here you **must** enter your Instagram API Keys. Get your API keys at [https://www.instagram.com/developer/clients/register/](https://www.instagram.com/developer/clients/register/).
