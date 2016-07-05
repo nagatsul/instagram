@@ -19,14 +19,14 @@ class Instagram
     public function __construct()
     {
         $this->client_key = config('instagram.client_id');
-	$this->client_secret = config('instagram.client_secret');
-	$this->redirect_uri = config('instagram.redirect_uri');
-	$this->scopes = config('instagram.scopes');
+        $this->client_secret = config('instagram.client_secret');
+        $this->redirect_uri = config('instagram.redirect_uri');
+        $this->scopes = config('instagram.scopes');
 
-	$this->client = new Client([
-	    'base_uri' => self::API_HOST,
-	    'timeout'  => self::TIMEOUT,
-	]);	
+    	$this->client = new Client([
+    	    'base_uri' => self::API_HOST,
+    	    'timeout'  => self::TIMEOUT,
+    	]);	
     }
 
     /**
@@ -36,7 +36,7 @@ class Instagram
     */
     public function getLoginUrl()
     {
-	return $this->url('oauth/authorize', ['scope' => $this->scopes]);
+	   return $this->url('oauth/authorize', ['scope' => $this->scopes]);
     }
 
     /**
@@ -46,7 +46,7 @@ class Instagram
     */
     public function getAccessToken($code)
     {
-	return $this->post('oauth/access_token', true, ['code' => $code]);
+	   return $this->post('oauth/access_token', true, ['code' => $code]);
     }
 
     /**
@@ -61,14 +61,14 @@ class Instagram
     {
     	$query = [
             'client_id' => $this->client_key,
-	    'redirect_uri' => $this->redirect_uri,
-	    'response_type' => 'code'
-	];
+    	    'redirect_uri' => $this->redirect_uri,
+    	    'response_type' => 'code'
+    	];
 
-	if ($parameters)
-	    $query = array_merge($query, $parameters);
+        if ($parameters)
+            $query = array_merge($query, $parameters);
 
-	$query = http_build_query($query);
+        $query = http_build_query($query);
 
         return sprintf('%s%s?%s', self::API_HOST, $path, $query);
     }
@@ -86,26 +86,26 @@ class Instagram
     	$query = [];
 
     	if ($authorization)
-	    $query = [
-	        'client_id' => $this->client_key,
-	    	'client_secret' => $this->client_secret,
-	    	'redirect_uri' => $this->redirect_uri,			 
-	    	'grant_type' => 'authorization_code',
-	    ];
+    	    $query = [
+    	        'client_id' => $this->client_key,
+    	    	'client_secret' => $this->client_secret,
+    	    	'redirect_uri' => $this->redirect_uri,			 
+    	    	'grant_type' => 'authorization_code',
+    	    ];
 
     	if ($parameters)
-	    $query = array_merge($query, $parameters);
+            $query = array_merge($query, $parameters);
 
-	try {
-	    $response = $this->client->request('POST', $path, [
-	        'form_params' => $query
-	    ]);
+        try {
+    	    $response = $this->client->request('POST', $path, [
+    	        'form_params' => $query
+    	    ]);
 
-	    return $this->toArray($response);
-	} 
-	catch (ClientException $e) {
-	    return $this->toArray($e->getResponse());
-	}    	
+            return $this->toArray($response);
+    	} 
+    	catch (ClientException $e) {
+    	    return $this->toArray($e->getResponse());
+        }    	
     }
 
     /**
@@ -118,15 +118,15 @@ class Instagram
     public function get($path, array $parameters)
     {
         try {
-	    $response = $this->client->request('GET', $path, [
-	        'query' => $parameters
-	    ]);
+    	    $response = $this->client->request('GET', $path, [
+    	        'query' => $parameters
+    	    ]);
 
-	    return $this->toArray($response);
-	}
-	catch (ClientException $e) {
-	    return $this->toArray($e->getResponse());
-	}
+            return $this->toArray($response);
+    	}
+    	catch (ClientException $e) {
+    	    return $this->toArray($e->getResponse());
+    	}
     }
 
     /**
