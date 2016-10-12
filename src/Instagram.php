@@ -46,7 +46,7 @@ class Instagram
     */
     public function getAccessToken($code)
     {
-	   return $this->post('oauth/access_token', true, ['code' => $code]);
+	   return $this->post('oauth/access_token', ['code' => $code], true);
     }
 
     /**
@@ -81,7 +81,7 @@ class Instagram
     * @param  array   $parameters    [Optional query parameters]
     * @return Array
     */
-    public function post($path, $authorization = false, array $parameters)
+    public function post($path, array $parameters, $authorization = false)
     {
     	$query = [];
 
@@ -132,8 +132,7 @@ class Instagram
     /**
     * Make DELETE calls to the API
     * 
-    * @param  string  $path          
-    * @param  boolean $authorization [Use access token query params]
+    * @param  string  $path
     * @param  array   $parameters    [Optional query parameters]
     * @return Array
     */
