@@ -137,31 +137,18 @@ class Instagram
     * @param  array   $parameters    [Optional query parameters]
     * @return Array
     */
-    public function delete($path, $authorization = false, array $parameters)
+    public function delete($path, array $parameters)
     {
-        $query = [];
-
-        if ($authorization)
-            $query = [
-                'client_id' => $this->client_key,
-                'client_secret' => $this->client_secret,
-                'redirect_uri' => $this->redirect_uri,           
-                'grant_type' => 'authorization_code',
-            ];
-
-        if ($parameters)
-            $query = array_merge($query, $parameters);
-
         try {
             $response = $this->client->request('DELETE', $path, [
-                'form_params' => $query
+                'query' => $parameters
             ]);
 
             return $this->toArray($response);
-        } 
+        }
         catch (ClientException $e) {
             return $this->toArray($e->getResponse());
-        }       
+        } 
     }
 
     /**
