@@ -67,9 +67,9 @@ public function callback(Request $request, Instagram $instagram)
 }
 ```
 
-Those are the only two custom classes for the API package. The rest of the API works with `POST` and `GET` requests based on Instagram's end points to keep this package ***super simple***. You can view all the end points here [https://www.instagram.com/developer/endpoints/](https://www.instagram.com/developer/endpoints/).
+Those are the only two custom classes for the API package. The rest of the API works with `POST`, `DELETE` and `GET` requests based on Instagram's end points to keep this package ***super simple***. You can view all the end points here [https://www.instagram.com/developer/endpoints/](https://www.instagram.com/developer/endpoints/).
 
-All you need to do is specify if the request is a `POST` or `GET` request, specify **just the end point** and any URL queries that are required (in an array).
+All you need to do is specify if the request is a `POST`, `DELETE` or `GET` request, specify **just the end point** and any URL queries that are required (in an array).
 For example:
 
 ```php
