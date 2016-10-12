@@ -130,6 +130,28 @@ class Instagram
     }
 
     /**
+    * Make DELETE calls to the API
+    * 
+    * @param  string  $path          
+    * @param  boolean $authorization [Use access token query params]
+    * @param  array   $parameters    [Optional query parameters]
+    * @return Array
+    */
+    public function delete($path, array $parameters)
+    {
+        try {
+            $response = $this->client->request('DELETE', $path, [
+                'query' => $parameters
+            ]);
+
+            return $this->toArray($response);
+        }
+        catch (ClientException $e) {
+            return $this->toArray($e->getResponse());
+        } 
+    }
+
+    /**
     * Convert API response to array
     * 
     * @param  Object $response
