@@ -8,7 +8,7 @@ use GuzzleHttp\Exception\ClientException;
 class Instagram
 {
     const API_HOST = 'https://api.instagram.com/';
-    const TIMEOUT = 2.0;
+    const TIMEOUT = 8.0;
 
     protected $client;
     protected $client_key;
