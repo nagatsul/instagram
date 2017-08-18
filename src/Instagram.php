@@ -98,7 +98,8 @@ class Instagram
 
         try {
     	    $response = $this->client->request('POST', $path, [
-    	        'form_params' => $query
+    	        'form_params' => $query,
+		'timeout' => self::TIMEOUT
     	    ]);
 
             return $this->toArray($response);
